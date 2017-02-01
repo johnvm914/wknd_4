@@ -32,23 +32,7 @@ class SimpleCalculator
 
 end
 
-class FancyCalculator
-
-  def add(first_number, second_number)
-    first_number + second_number
-  end
-
-  def subtract(first_number, second_number)
-    first_number - second_number
-  end
-
-  def multiply(first_number, second_number)
-    first_number * second_number
-  end
-
-  def divide(first_number, second_number)
-    first_number / second_number
-  end
+class FancyCalculator < SimpleCalculator
 
   def square_root(number)
     Math.sqrt(number)
@@ -57,4 +41,35 @@ class FancyCalculator
 end
 
 # Write your own driver code below:
+calc1 = SimpleCalculator.new
+calc2 = FancyCalculator.new
 
+# Test Simple Calculator
+result = calc1.add(2, 3)
+puts "Your result returned:"
+puts result
+if result == 5
+  puts "PASS!"
+else
+  puts "F"
+end
+
+# Test Fancy Calculator
+result = calc2.square_root(144)
+puts "Your result returned:"
+puts result
+if result == 12
+  puts "PASS!"
+else
+  puts "F"
+end
+
+# Test Fancy Calculator Inheritance
+result = calc2.multiply(6, 3)
+puts "Your result returned:"
+puts result
+if result == 18
+  puts "PASS!"
+else
+  puts "F"
+end
